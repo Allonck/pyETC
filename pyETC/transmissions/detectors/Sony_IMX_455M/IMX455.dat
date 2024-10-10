@@ -1,0 +1,14 @@
+#From https://www.cloudynights.com/topic/798063-quantum-efficiency-of-the-sony-imx455-in-qhy600-and-imx492-in-qhy294/page-2
+# Wavelength [A], QE
+3340.00 0.106
+3660.00 0.285
+4050.00 0.684
+4500.00 0.825
+4920.00 0.843
+5500.00 0.756
+5890.00 0.678
+6940.00 0.429
+7680.00 0.247
+8530.00 0.139
+9050.00 0.101
+10600.00 0.06

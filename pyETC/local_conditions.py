@@ -49,7 +49,7 @@ def sky_brightness(info_dict):
     sb[0, 1] = -1
     for i in range(len(sb)):
         sb[i, 0] = -1
-    sb = sb.astype(np.float)
+    sb = sb.astype(float)
 
     # Moon age limits
     if moon_age < 0.0:

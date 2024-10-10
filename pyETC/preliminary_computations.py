@@ -4,7 +4,7 @@
 import numpy as np
 from scipy.integrate import dblquad
 from scipy.interpolate import interp1d
-from skimage.draw import disk
+from skimage.draw import ellipse as cricle # from skimage.draw import circle
 from astropy.io import ascii
 
 from . import photometry as phot
@@ -141,14 +141,17 @@ def field_of_view_tel(info_dict, unit="arcmin"):
     return info_dict
 
 
-def obstruction(info_dict):
-    """ Obstruction due to M2 """
+def obstruction(info_dict): #Modified
+  """ Obstruction due to M2 """
+  if "D_M2" not in info_dict:
+    info_dict["obstruction"] = 0
+  else:
     # Multiply by 1.05 to take the arms into account
     info_dict["obstruction"] = (
         info_dict["M2_factor"] * info_dict["D_M2"]
     ) ** 2.0 / info_dict["D_M1"] ** 2.0
 
-    return info_dict
+  return info_dict
 
 
 def A_tel(info_dict):
@@ -570,13 +573,13 @@ def nb_pixels(info_dict):
 
     elif info_dict["PSF_position_on_ccd"] == "center":
         img1 = np.zeros((100, 100), dtype=np.uint8)
-        rr1, cc1 = disk((50, 50), R_source + 0.5)
+        rr1, cc1 = circle(50, 50, R_source + 0.5)
         img1[rr1, cc1] = 1
         npix = np.sum(img1)
 
     elif info_dict["PSF_position_on_ccd"] == "corner":
         img2 = np.zeros((100, 100), dtype=np.uint8)
-        rr2, cc2 = disk((50.5, 50.5), R_source + 0.5)
+        rr2, cc2 = circle(50.5, 50.5, R_source + 0.5)
         img2[rr2, cc2] = 1
         npix = np.sum(img2)
 

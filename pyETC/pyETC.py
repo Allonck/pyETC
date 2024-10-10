@@ -4,7 +4,7 @@
 """Main module."""
 
 import numpy as np
-import imp
+import importlib as imp
 import hjson
 
 from collections import OrderedDict
@@ -36,7 +36,10 @@ class etc:
         """ Class constructor """
 
         try:
-            _, path, _ = imp.find_module("pyETC")
+            spec = imp.machinery.PathFinder().find_spec("pyETC")
+            submodule_search_locations = spec.submodule_search_locations
+            path = submodule_search_locations
+            path = ''.join(path)
         except:
             print("path to pyETC can not be found.")
 

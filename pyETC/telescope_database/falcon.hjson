@@ -44,14 +44,11 @@
 
        "telescope": {
            "mirrors": {"Al_OHP_unam": 3}
-           "lenses": {"N-BaK4": 1}
            "coating": {"template_tel": 4}
-           "dichroics": {"template_tel": 1}
            }
 
        "APX1": {
            "coating": {"template_vis": 2}
-           "dichroics": {"template_vis": 1}
            "windows": {"template_vis": 1}
            }
 }

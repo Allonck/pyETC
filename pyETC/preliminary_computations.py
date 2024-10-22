@@ -141,18 +141,17 @@ def field_of_view_tel(info_dict, unit="arcmin"):
     return info_dict
 
 
-def obstruction(info_dict): #Modified
-  """ Obstruction due to M2 """
-  if "D_M2" not in info_dict:
-    info_dict["obstruction"] = 0
-  else:
-    # Multiply by 1.05 to take the arms into account
-    info_dict["obstruction"] = (
-        info_dict["M2_factor"] * info_dict["D_M2"]
-    ) ** 2.0 / info_dict["D_M1"] ** 2.0
+def obstruction(info_dict):
+    """Obstruction due to M2 (secondary mirror), adjusted for primary mirror only telescopes."""
+    # If there is no M2 or obstruction, set it to 0
+    if "D_M2" not in info_dict or info_dict["M2_factor"] == 1.0:
+        info_dict["obstruction"] = 0  # No obstruction for Falcon
+    else:
+        # Calculate the obstruction based on M2 size and M2_factor
+        info_dict["obstruction"] = (info_dict["M2_factor"] * info_dict["D_M2"]
+                                   ) ** 2.0 / info_dict["D_M1"] ** 2.0
 
-  return info_dict
-
+    return info_dict
 
 def A_tel(info_dict):
     """

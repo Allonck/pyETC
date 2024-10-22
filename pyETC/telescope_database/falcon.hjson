@@ -4,15 +4,14 @@
 # Wheter the atmospheric transmission is loaded from a file or computed using the extinction: "file" / "data"
 "atmosphere_type": file
 # Name of the file for extinction. In pyETC/local_conditions/atmosphere/ #Esto es de Mexico, Pendiente
-"ext_file": OAN_extinction 
+"ext_file": OAN_extinction
 # Name of the file for atmospheric transmission. In pyETC/local_conditions/atmosphere/ #Esto es de Mexico, Pendiente
-"atm_file": OAN_atm_trans 
+"atm_file": OAN_atm_trans
 
 #-------- TELESCOPE -----------------------------#
 #M1 diameter (in m)
 "D_M1": 0.5
-#Factor to take into account additional obscuration such as the spider arms. Simply multiply D_M2 with this factor
-"M2_factor": 1.0
+
 #focal_length (in meters)
 "focal_length": {
               "APX1": 4.082
@@ -73,10 +72,10 @@
            "Nphotocell_Y": 6388
 
            # Size of 1 photocell on X axis (in meters)
-           "Photocell_SizeX": 3.76e-6 
+           "Photocell_SizeX": 3.76e-6
 
            # Size of 1 photocell on Y axis (in meters)
-           "Photocell_SizeY": 3.76e-6 
+           "Photocell_SizeY": 3.76e-6
 
            # Time required to read all the photocells (in s) #Pendiente
            "ReadoutTime": 9

@@ -39,13 +39,13 @@
 
 #-------- LOCAL CONDITIONS  ---------------------#
 #Seeing in arcsec at 500nm and for an airmass 1 
-"seeing_zenith": 1
+"seeing_zenith": 1.0
 
 #elevation in degrees (41.9deg equialent to 1.5 airmass)
-"elevation": 41.9
+"elevation": 50.0
 
 #moon age: 0: new moon  / 14: full moon
-"moon_age": 7.0
+"moon_age": 4.76
 
 #Night temperature in °C (to calculate instrument background)
 "Temp_night": 5

@@ -22,6 +22,8 @@
 #focal_length (in meters)
 "focal_length": {
               "MAS": 12.15
+              "MAS9": 12.15
+              "MAS36": 12.15 
           }
 
 # FWHM of the optics in arcsec, same for each band 
@@ -57,6 +59,16 @@
            "coating": {"template_vis": 2}
            "windows": {"template_vis": 1}
            }
+
+       "MAS9": {
+           "coating": {"template_vis": 2}
+           "windows": {"template_vis": 1}
+           }
+
+       "MAS36": {
+           "coating": {"template_vis": 2}
+           "windows": {"template_vis": 1}
+           }
 }
 
 #Si borro los instrumentos de arriba no funciona(?
@@ -88,10 +100,10 @@
            "ReadoutTime": 35
 
            # Full well capacity of one photocell (in e-)
-           "FWC": 60000
+           "FWC": 5000
 
            # Readout Noise (in e-/photocell)
-           "RN": 4
+           "RN": 2
 
            # Dark current for one photocell (in e-/photocell/s)
            "DC": 0.0006
@@ -102,5 +114,78 @@
            # Number of bits for the camera
            "bits": 16}
 
+"MAS9": {
+           # Folder must be in pyETC/transmissions/detectors/
+           "camera_type": MAS_Skipper_16ch
+
+           # File must be in pyETC/transmissions/detectors/'camera_type'/
+           "sensor": MAS_Skipper
+
+           # Number of photocells on X axis
+           "Nphotocell_X": 512
+
+           # Number of photocells on Y axis
+           "Nphotocell_Y": 1024
+
+           # Size of 1 photocell on X axis (in meters)
+           "Photocell_SizeX": 15e-6
+
+           # Size of 1 photocell on Y axis (in meters)
+           "Photocell_SizeY": 156e-6
+
+           # Time required to read all the photocells (in s) #Pendiente
+           "ReadoutTime": 35
+
+           # Full well capacity of one photocell (in e-)
+           "FWC": 5000
+
+           # Readout Noise (in e-/photocell)
+           "RN": 0.66
+
+           # Dark current for one photocell (in e-/photocell/s)
+           "DC": 0.0006
+
+           # e- to ADU conversion factor #Pendiente
+           "gain": 0.91
+
+           # Number of bits for the camera
+           "bits": 16}
+
+"MAS36": {
+           # Folder must be in pyETC/transmissions/detectors/
+           "camera_type": MAS_Skipper_16ch
+
+           # File must be in pyETC/transmissions/detectors/'camera_type'/
+           "sensor": MAS_Skipper
+
+           # Number of photocells on X axis
+           "Nphotocell_X": 512
+
+           # Number of photocells on Y axis
+           "Nphotocell_Y": 1024
+
+           # Size of 1 photocell on X axis (in meters)
+           "Photocell_SizeX": 15e-6
+
+           # Size of 1 photocell on Y axis (in meters)
+           "Photocell_SizeY": 156e-6
+
+           # Time required to read all the photocells (in s) #Pendiente
+           "ReadoutTime": 35
+
+           # Full well capacity of one photocell (in e-)
+           "FWC": 5000
+
+           # Readout Noise (in e-/photocell)
+           "RN": 0.33
+
+           # Dark current for one photocell (in e-/photocell/s)
+           "DC": 0.0006
+
+           # e- to ADU conversion factor #Pendiente
+           "gain": 0.91
+
+           # Number of bits for the camera
+           "bits": 16}
 }
 
